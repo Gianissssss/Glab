@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Merriweather:ital@1&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p-button{
+  margin: 2px;
+}
+
+.product-item-content{
+  width: 300px;
+  height: 500px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/*banner promo*/
+.bannerpromo{
+  width: 100%;
+height: 600px;
+display: flex;
+align-items: flex-end;
+background-image: url(../../../assets/portadaaccesorios.png);
+background-attachment: fixed;
+background-size: cover;
+justify-content: center;
+background-position: top;
+}
+
+.maspedido{
+  height: 100px;
+  text-align: center;
+ border-radius: 20px;
+ margin: 0 20px;
+}
+
+.titulo-pedido{
+  margin-top: 50px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Merriweather';
+  letter-spacing: 4px;
+}
+/*btn ultimo*/
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #034b19;
+  background-size: 400%;
+  color: #fff;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(48, 158, 72) 10.8%,
+    rgb(16, 126, 26) 94.3%
+  );
+  transition: all 0.475s;
+}

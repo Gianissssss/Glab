@@ -1,0 +1,216 @@
+
+<p-dialog header="Ingresar " [(visible)]="modalVisible">
+    <form [formGroup]="buzomujer" style="text-align: center;">
+      <img [src]="imagen" width="200px" height="200px" style="text-align:center" alt="">
+   <span class="p-float-label m-4">
+      <input id="float-input" type="text" pInputText formControlName="Producto">
+      <label for="float-input">Producto</label>
+  </span>
+<span class="p-float-label m-4">
+  <input id="float-input" type="text" pInputText formControlName="Color">
+  <label for="float-input">Color</label>
+</span>
+<span class="p-float-label m-4">
+<input id="float-input" type="text" pInputText formControlName="Precio">
+<label for="float-input">Precio</label>
+</span>
+<span class="p-float-label m-4">
+    <input id="float-input" type="text" pInputText formControlName="Cantidad">
+    <label for="float-input">Cantidad</label>
+    </span>
+<span class="p-float-label m-4">
+<input id="float-input" type="file" pInputText accept=".jpg .png .gif" (change)="cargarImagen($event)" formControlName="Img">
+
+</span>
+
+<button label="{{textoBoton}}" (click)="agregarProductoM()" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-warning"></button>
+</form>
+</p-dialog>
+ <div class="card">
+    <div class="maspedido">
+        <h1 class="titulo-pedido">Productos de Mujer</h1>
+    </div>
+    <p-table responsiveLayout="scroll" [value]="collecionRemeraM" >
+        <ng-template pTemplate="caption">
+            <button (click)="mostrarDialogo()" style="text-align: end;" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-help"></button>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>Producto </th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+                <th>Opciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-remeram let-columns="columns">
+            <tr>
+                <td>{{remeram.Producto}}</td>
+                <td>{{remeram.Precio}}</td>
+                <td>{{remeram.Color}}</td>
+                <td>{{remeram.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="mostrarEditar(remeram)"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(remeram)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+            <p-dialog header="Advertencia" [(visible)]="eliminarVisible">
+                <p>¿Deseas eliminar este libro?</p>
+                <p-button  (click)="eliminarVisible=false">No</p-button>
+                <p-button  (click)="borrarProductoM()" styleClass="p-button-danger" >Sí</p-button>
+            </p-dialog>
+        </ng-template>
+    </p-table>
+    <p-table responsiveLayout="scroll" [value]="collecionBuzoM">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>Producto </th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+                <th>Opciones</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-buzos let-columns="columns">
+            <tr>
+                <td>{{buzos.Producto}}</td>
+                <td>{{buzos.Precio}}</td>
+                <td>{{buzos.Color}}</td>
+                <td>{{buzos.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(buzos)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+            <p-dialog header="Advertencia" [(visible)]="eliminarVisible">
+                <p>¿Deseas eliminar este libro?</p>
+                <p-button  (click)="eliminarVisible=false">No</p-button>
+                <p-button  (click)="borrarProductoM()" styleClass="p-button-danger" >Sí</p-button>
+            </p-dialog>
+        </ng-template>
+    </p-table>
+    <p-table responsiveLayout="scroll" [value]="collecionPantalonM">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>Producto </th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+                <th>Opciones</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pantalonm let-columns="columns">
+            <tr>
+                <td>{{pantalonm.Producto}}</td>
+                <td>{{pantalonm.Precio}}</td>
+                <td>{{pantalonm.Color}}</td>
+                <td>{{pantalonm.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(pantalonm)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+            <p-dialog header="Advertencia" [(visible)]="eliminarVisible">
+                <p>¿Deseas eliminar este libro?</p>
+                <p-button  (click)="eliminarVisible=false">No</p-button>
+                <p-button  (click)="borrarProductoM()" styleClass="p-button-danger" >Sí</p-button>
+            </p-dialog>
+        </ng-template>
+    </p-table>
+    <div class="maspedido">
+        <h1 class="titulo-pedido">Productos de Hombre</h1>
+    </div>
+    <p-table responsiveLayout="scroll" [value]="collecionRemeraH">       
+        <ng-template pTemplate="body" let-remerah let-columns="columns">
+            <tr>
+                <td>{{remerah.Producto}}</td>
+                <td>{{remerah.Precio}}</td>
+                <td>{{remerah.Color}}</td>
+                <td>{{remerah.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(remerah)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-table responsiveLayout="scroll" [value]="collecionPantalonH">
+        <ng-template pTemplate="body" let-pantalonh let-columns="columns">
+            <tr>
+                <td>{{pantalonh.Producto}}</td>
+                <td>{{pantalonh.Precio}}</td>
+                <td>{{pantalonh.Color}}</td>
+                <td>{{pantalonh.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(pantalonh)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-table responsiveLayout="scroll" [value]="collecionBuzoH">
+        <ng-template pTemplate="body" let-buzoh let-columns="columns">
+            <tr>
+                <td>{{buzoh.Producto}}</td>
+                <td>{{buzoh.Precio}}</td>
+                <td>{{buzoh.Color}}</td>
+                <td>{{buzoh.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(buzoh)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div>
+        <h1></h1>
+    </div>
+    <div class="maspedido">
+        <h1 class="titulo-pedido">Conjuntos</h1>
+    </div>
+    <p-table responsiveLayout="scroll" [value]="collecionConjuntos">
+        <ng-template pTemplate="body" let-conjuntos let-columns="columns">
+            <tr>
+                <td>{{conjuntos.Producto}}</td>
+                <td>{{conjuntos.Precio}}</td>
+                <td>{{conjuntos.Color}}</td>
+                <td>{{conjuntos.Cantidad}}</td>
+                <td>
+                    <p-button icon="pi pi-check"  (click)="eliminarVisible=false"></p-button>
+                    <p-button icon="pi pi-times"  (click)="mostrarEliminar(conjuntos)" styleClass="p-button-danger ml-2" ></p-button>
+            </tr>
+        </ng-template>
+    </p-table>
+</div> 
+
+
+<!-- 
+
+<div class="container" style="margin: 10px;  padding-top: 20px; text-align: center;">
+
+   <div class="content-section implementation">
+    <div class="cardd">
+        <p-table [value]="collecionMujeres" responsiveLayout="scroll">
+            <ng-template pTemplate="caption">
+                <div class="flex align-items-center justify-content-between">
+                    Productos
+                    <p-button icon="pi pi-refresh"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Color</th>
+                    <th>Opciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-mujer>
+                <tr>
+                    <td>{{mujer.Producto}}</td>
+                    <td><img [src]="mujer.Img" [alt]="mujer.Producto" width="100" class="shadow-4" /></td>
+                    <td>{{mujer.Tipo}}</td>
+                    <td><p-button icon="pi pi-check" (click)="borrarProductoM()" styleClass="p-button-danger" ></p-button>
+                        <p-button icon="pi pi-times" (click)="mostrarEditar"></p-button></td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    
+ -->

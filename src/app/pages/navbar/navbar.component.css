@@ -1,0 +1,37 @@
+.card {
+    width: 190px;
+    height: 254px;
+    background: #F4F6FB;
+    border: 1px solid white;
+    box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
+    -webkit-box-shadow: 10px 10px 64px 0px rgba(186, 186, 202, 0.75);
+    -moz-box-shadow: 10px 10px 64px 0px rgba(208, 208, 231, 0.75);
+  }
+  
+  .form {
+    padding: 25px;
+  }
+  p-menubar{
+    margin-top: 10px;
+  }
+  button {
+    text-transform: uppercase;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 80%;
+  }
+  
+  button:hover {
+    background-color: #ffffff93;
+    box-shadow: 0px 15px 20px rgba(8, 51, 33, 0.808);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
+

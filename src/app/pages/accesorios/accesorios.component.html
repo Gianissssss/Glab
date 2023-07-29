@@ -1,0 +1,84 @@
+<div class="bannerpromo">
+
+</div>
+<div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Anillos</h2>
+  </div>
+<div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="collecionAnillos" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+ 
+      <ng-template let-anillos pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="anillos.Img" width="200" height="200" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{anillos.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{anillos.Material}}</h6>
+                      <h6 class="mt-0 mb-3">${{anillos.Precio}}</h6>
+                      <div style="text-align: center;" >
+                        <button class="button" (click)="showModalDialog()">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>
+<div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Collares</h2>
+  </div>
+<div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="collecionCollares" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+   
+      <ng-template let-Collares pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="Collares.Img" width="200" height="200" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{Collares.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{Collares.Material}}</h6>
+                      <h6 class="mt-0 mb-3">${{Collares.Precio}}</h6>
+                      <div style="text-align: center;" >
+                        <button class="button" (click)="showModalDialog()">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>
+<div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Aros</h2>
+  </div>
+<div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="collecionAros" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+   
+      <ng-template let-Aros pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="Aros.Img" width="200" height="200" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{Aros.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{Aros.Material}}</h6>
+                      <h6 class="mt-0 mb-3">${{Aros.Precio}}</h6>
+                      <div style="text-align: center;" >
+                        <button class="button" (click)="showModalDialog()">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>

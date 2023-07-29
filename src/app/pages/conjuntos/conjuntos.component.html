@@ -1,0 +1,29 @@
+<div class="bannerpromo">
+   
+</div>
+<div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="collecionConjuntos" styleClass="custom-carousel" [numVisible]="4" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+   <ng-template pTemplate="header">
+          
+      </ng-template>
+      <ng-template let-conjuntos pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="conjuntos.Img" width="250" height="250" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{conjuntos.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{conjuntos.Color}}</h6>
+                      <h6 class="mt-0 mb-3">${{conjuntos.Precio}}</h6>
+                      <div style="text-align: center;" >
+                        <button class="button" (click)="showModalDialog()">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+  </div>

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Merriweather:ital@1&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p-button{
+  margin: 2px;
+}
+
+.maspedido{
+    height: 100px;
+    text-align: center;
+   border-radius: 20px;
+   margin: 0 20px;
+  }
+  
+  .titulo-pedido{
+    margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Merriweather';
+    letter-spacing: 4px;
+  }

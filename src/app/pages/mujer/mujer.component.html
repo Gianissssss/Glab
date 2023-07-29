@@ -1,0 +1,83 @@
+<div class="bannerpromo">
+   
+</div>
+<div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Buzos</h2>
+  </div>
+
+ <div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="buzos" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+      <ng-template let-buzos pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="buzos.Img" width="250" height="250" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{buzos.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{buzos.Color}}</h6>
+                      <h6 class="mt-0 mb-3">${{buzos.Precio}}</h6>
+                      <div style="text-align: center;" >
+                        <button class="button" (click)="showModalDialog()">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>
+
+<div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Pantalones</h2>
+  </div>
+<div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="pantalones" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+      <ng-template let-pantalonm pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="pantalonm.Img" width="250" height="250" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{pantalonm.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{pantalonm.Color}}</h6>
+                      <h6 class="mt-0 mb-3">${{pantalonm.Precio}}</h6>
+                      <div class="car-buttons mt-5">
+                        <button class="button">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+  </div>
+  <div class="maspedido">
+    <h2 class="titulo-pedido" style=" color:black;">Remeras</h2>
+  </div>
+  <div style="margin-bottom: 20px;margin-top: 30px;">
+    <p-carousel [value]="remeras" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+      <ng-template let-remeram pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3">
+                      <img [src]="remeram.Img" width="250" height="250" style="border-radius: 20px;"  class="product-image" />
+                  </div>
+                  <div>
+                      <h4 class="mb-1">{{remeram.Producto}}</h4>
+                      <h6 class="mt-0 mb-3">{{remeram.Color}}</h6>
+                      <h6 class="mt-0 mb-3">${{remeram.Precio}}</h6>
+                      <div class="car-buttons mt-5">
+                        <button class="button">
+                            <span class="button-content">Agregar al carrito</span>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+  </div> 
